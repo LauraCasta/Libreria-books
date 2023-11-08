@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="card mx-4 mt-4 " style="width: 35rem" >
+    <div class="card-body">
+      <h5 class="card-title" >Iniciar Sesión</h5>
+      <form (ngSubmit)="inicioSesion(formInicio)" #formInicio = "ngForm">
+        <div class="mb-3">
+          <label for="usuario" class="form-label">Usuario</label>
+          <input type="email" name="correo" ngModel class="form-control" id="usuario" placeholder="name@example.com"/>
+        </div>
+        <div class="mb-3">
+          <label for="passwordUser" class="form-label">Contraseña</label>
+          <input type="password" name="password" ngModel class="form-control" id="passwordUser" placeholder="Contraseña"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </form>
+      <br><br>
+        <a>¿No tiene una cuenta?</a>
+        <button type="button" class="btn btn-link" routerLink='/registro' >Registrarse</button>
+    </div>
+  </div>
+</div>

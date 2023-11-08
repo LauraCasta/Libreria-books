@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="card mx-4 mt-4" style="width: 35rem">
+    <div class="card-body">
+      <h5 class="card-title">Ingrese los siguientes datos</h5><br>
+      <form (ngSubmit)="guardar(formRegistro)" #formRegistro="ngForm">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre Completo</label>
+          <input type="text" name="nombre" ngModel class="form-control" id="nombre" placeholder="Nombre completo"/>
+        </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo electronico</label>
+          <input type="email" name="correo" ngModel class="form-control" id="correo" placeholder="name@example.com"/>
+        </div>
+        <div class="mb-3">
+          <label for="passwordUser1" class="form-label">Contraseña</label>
+          <input type="password" name="password" ngModel class="form-control" id="passwordUser1" placeholder="Contraseña"/>
+        </div>
+        <button type="submit" class="btn btn-primary" >Registrarse</button>
+      </form>
+    </div>
+  </div>
+</div>

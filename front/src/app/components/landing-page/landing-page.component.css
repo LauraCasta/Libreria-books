@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  padding: 0.5rem 1rem;
+  width: 200px;
+  margin: 0 auto;
+  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.438);
+  transition: 0.3s;
+  border-radius: 10px; /* 5px rounded corners */
+
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
+.card-title{
+  text-align: center;
+}
+
+button{
+  display: block;
+  padding: 0.5rem 1rem;
+  width: 200px;
+  margin: 0 auto;
+}
+

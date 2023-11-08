@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink='/home' aria-current="page" >Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink='/home' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cátalogo
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink='/home'>Comics</a></li>
+            <li><a class="dropdown-item" routerLink='/home'>Educación</a></li>
+            <li><a class="dropdown-item" routerLink='/home'>Historia</a></li>
+            <li><a class="dropdown-item" routerLink='/home'>Juvenil</a></li>
+            <li><a class="dropdown-item" routerLink='/home'>Programación</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="login">
+      <div *ngIf="authService.estaAutenticado()==false;else cerrar">
+        <button class="btn btn-primary" routerLink='/login' type="button" >Iniciar Sesión</button>
+      </div>
+      <ng-template #cerrar>
+        <div class="dropdown">
+          <a class="btn btn-primary dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mi cuenta
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink='/dashboard'>Mis datos</a></li>
+            <li><a class="dropdown-item" routerLink='/home'>Mis compras</a></li>
+            <li><a class="dropdown-item" routerLink='/home'>Cambiar contraseña</a></li>
+            <li><a class="dropdown-item" (click)="cerrarSesion()">Cerrar Sesión</a></li>
+          </ul>
+        </div>
+      </ng-template>
+      <div class="dropdown">
+        <a class="btn btn-primary dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Mi cuenta
+        </a>
+        <ul class="dropdown-menu" >
+          <li><a class="dropdown-item" routerLink='/dashboard'>Mis datos</a></li>
+          <li><a class="dropdown-item" routerLink='/home'>Mis compras</a></li>
+          <li><a class="dropdown-item" routerLink='/home'>Cambiar contraseña</a></li>
+          <li><a class="dropdown-item" (click)="cerrarSesion()">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
