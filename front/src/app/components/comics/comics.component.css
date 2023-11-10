@@ -1,0 +1,33 @@
+.card_datos {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex;
+  width: 98%;
+  height: 100%;
+  font-size: calc(10px + 2vmin);
+  color: black
+}
+
+.card_fila:hover{
+box-shadow: 5px 10px 20px 10px red;
+}
+
+.card_fila{
+  margin: 10px;;
+  font-size: calc(10px + 2vmin);
+  color: black
+}
+
+.card_text{
+font-size: calc(1px + 2vmin);
+text-align: start;
+}
+.card_imagen {
+  width: 90%;
+  height: 100%;
+  pointer-events: none;
+}
