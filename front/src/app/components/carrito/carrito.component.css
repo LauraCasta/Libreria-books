@@ -1,0 +1,19 @@
+.woocommerce a.remove {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.woocommerce a.remove {
+    display: block;
+    font-size: 1.5em;
+    height: 1em;
+    width: 1em;
+    text-align: center;
+    line-height: 1;
+    border-radius: 100%;
+    color: red!important;
+    text-decoration: none;
+    font-weight: 700;
+    border: 0;
+}
