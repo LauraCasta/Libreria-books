@@ -1,5 +1,4 @@
 package com.libreria.entity;
-import java.sql.Blob;
 import javax.persistence.*;
 
 @Entity
@@ -17,10 +16,10 @@ public class LibrosEntity {
     private TipoLibroEntity idTipoLibro;
     @JoinColumn(name = "ID_CATEGORIA", nullable = false, referencedColumnName="ID_CATEGORIA")
     @ManyToOne
-    private CategoriaEntity categoria;
+    private CategoriaEntity idCategoria;
     @Column(name = "AUTOR", nullable = false)
     private String autor;
-    @Column(name = "NUMERO_PAGINA", nullable = false)
+    @Column(name = "NUMERO_PAGINAS", nullable = false)
     private String numeroPagina;
     @Column(name = "EDITORIAL", nullable = false)
     private String editorial;
@@ -31,7 +30,7 @@ public class LibrosEntity {
     @Column(name = "IDIOMA", nullable = false)
     private String idioma;
     @Column(name = "IMAGEN", nullable = false)
-    private Blob imagem;
+    private String imagen;
     public int getIdLibro() {
         return idLibro;
     }
@@ -50,11 +49,11 @@ public class LibrosEntity {
     public void setIdTipoLibro(TipoLibroEntity idTipoLibro) {
         this.idTipoLibro = idTipoLibro;
     }
-    public CategoriaEntity getCategoria() {
-        return categoria;
+    public CategoriaEntity getIdCategoria() {
+        return idCategoria;
     }
-    public void setCategoria(CategoriaEntity categoria) {
-        this.categoria = categoria;
+    public void setIdCategoria(CategoriaEntity idCategoria) {
+        this.idCategoria = idCategoria;
     }
     public String getAutor() {
         return autor;
@@ -92,10 +91,10 @@ public class LibrosEntity {
     public void setIdioma(String idioma) {
         this.idioma = idioma;
     }
-    public Blob getImagem() {
-        return imagem;
+    public String getImagen() {
+        return imagen;
     }
-    public void setImagem(Blob imagem) {
-        this.imagem = imagem;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 }

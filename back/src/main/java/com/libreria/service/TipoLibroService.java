@@ -12,17 +12,15 @@ import java.util.Optional;
 @Service
 public class TipoLibroService {
     @Autowired
-    private TipoLibroRepository repository;
+    private TipoLibroRepository tpLibrorepository;
 
 
     public List<TipoLibroEntity> getTiposLibros(){
-        return repository.findAll();
+        return tpLibrorepository.findAll();
     }
    
     public Optional<TipoLibroEntity> getTipoLibro(int codigo){
-        return repository.findByIdTpLibro(codigo);
+        return tpLibrorepository.findByIdTipoLibro(codigo);
     }
-
-
 
 }

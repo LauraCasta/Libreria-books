@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface TipoDocumentoRepository extends JpaRepository<TipoDocumentoEntity, Integer> {
-    Optional<TipoDocumentoEntity> findByIdTpDoc(int idTipoDoc);
+    Optional<TipoDocumentoEntity> findByIdTipoDocumento(int idTipoDoc);
 }

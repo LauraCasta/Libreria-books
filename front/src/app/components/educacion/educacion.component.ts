@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ComicsService } from 'src/app/services/catalogo/comics.service';
+import { EducacionService } from 'src/app/services/catalogo/educacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-educacion',
@@ -9,17 +10,29 @@ import { ComicsService } from 'src/app/services/catalogo/comics.service';
 })
 export class EducacionComponent implements OnInit {
 
-  constructor(private comics: ComicsService){}
+  constructor(private books: EducacionService){}
 
-  allComics: Observable<any>;
+  allBooks: Observable<any>;
 
   ngOnInit(): void {
-    this.getComics();
+    this.getBooks();
    }
 
-  getComics(){
-    this.allComics = this.comics.getAllComics();
-    console.log(this.allComics);
+  getBooks(){
+    this.allBooks=this.books.getAllBooks();
+    console.log(this.allBooks);
   }
+  addCarro(){
+    Swal.fire({
+      title: "Desea agregarlo al carrito",
+      showDenyButton: true,
+      confirmButtonText: "Agregar",
+      denyButtonText: `Cancelar`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire("Agregado!", "", "success");
+      }
+    })}
 
 }

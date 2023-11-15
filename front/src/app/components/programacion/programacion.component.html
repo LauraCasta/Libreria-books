@@ -1,22 +1,23 @@
 <h3>Catálogo de Programación</h3>
 <div class="container">
-  <div class="card_fila" *ngFor="let dato of allBooks |json" style="width: 20rem;" >
+  <div class="card_fila" *ngFor="let dato of allBooks | async" style="width: 20rem;" >
     <div class="card me-4" style="width: 20rem;" >
       <div class="card-body" >
-        <h2>{{dato.title ? dato.title : "Sin nombre"}}</h2>
-        <!--<img src="{{dato.thumbnail.path+'.'+dato.thumbnail.extension}}" class="card_imagen" />-->
+        <h2>{{dato.nombreLibro ? dato.nombreLibro : "Sin nombre"}}</h2>
+        <img src="{{dato.imagen}}" class="card_imagen" />
         <div class='card_text'>
           <p></p>
-          <p>{{dato.contect ? dato.contect : "Sin descripción"}}</p>
+          <p>{{dato.descripcion ? dato.descripcion : "Sin descripción"}}</p>
           <h5>Creadores: </h5>
-          <p>{{dato.author ? '- '+dato.author : "No parecen creadores"}}</p>
+          <p>{{dato.autor ? '- '+dato.autor : "No parecen creadores"}}</p>
          <h5>Lenguaje: </h5>
-           <p>{{dato.language ? '- '+dato.language : ""}}</p>
+           <p>{{dato.idioma ? '- '+dato.idioma : ""}}</p>
           <h5>Número de paginas: </h5>
-          <p>{{dato.pages ? dato.pages : ""}}</p>
+          <p>{{dato.numeroPagina ? dato.numeroPagina : ""}}</p>
           <h5>Publicado por: </h5>
-          <p>{{dato.publisher ? dato.publisher : ""}} en {{dato.publisher_date}}</p>
-        </div>
+          <p>{{dato.fechaPublicacion ? dato.fechaPublicacion : ""}} en {{dato.publisher_date}}</p>
+        </div><br>
+        <button class="btn btn-primary" type="button" (click)="addCarro()" >Agregar</button>
       </div>
     </div>
   </div>

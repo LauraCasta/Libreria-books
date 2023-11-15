@@ -6,7 +6,7 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 
-export class ProgramacionService {
+export class JuvenilService {
   urlApi =`/api/Libreria/mostrarListLibros`;
 
   constructor(

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ComicsService } from 'src/app/services/catalogo/comics.service';
+import { HistoriaService } from 'src/app/services/catalogo/historia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-history',
@@ -9,17 +10,29 @@ import { ComicsService } from 'src/app/services/catalogo/comics.service';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor(private comics: ComicsService){}
+  constructor(private books: HistoriaService){}
 
-  allComics: Observable<any>;
+  allBooks: Observable<any>;
 
   ngOnInit(): void {
-    this.getComics();
+    this.getBooks();
    }
 
-  getComics(){
-    this.allComics = this.comics.getAllComics();
-    console.log(this.allComics);
+   addCarro(){
+    Swal.fire({
+      title: "Desea agregarlo al carrito",
+      showDenyButton: true,
+      confirmButtonText: "Agregar",
+      denyButtonText: `Cancelar`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire("Agregado!", "", "success");
+      }
+    })}
+  getBooks(){
+    this.allBooks=this.books.getAllBooks();
+    console.log(this.allBooks);
   }
 
 }

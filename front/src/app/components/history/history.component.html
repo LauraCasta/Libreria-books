@@ -1,28 +1,23 @@
-<h3>Catálogo de Comics</h3>
+<h3>Catálogo de Historia</h3>
 <div class="container">
-  <div class="card_fila" *ngFor="let dato of allComics | async" style="width: 20rem;" >
+  <div class="card_fila" *ngFor="let dato of allBooks | async" style="width: 20rem;" >
     <div class="card me-4" style="width: 20rem;" >
       <div class="card-body" >
-        <h2>{{dato.title ? dato.title : "Sin nombre"}}</h2>
-        <img src="{{dato.thumbnail.path+'.'+dato.thumbnail.extension}}" class="card_imagen" />
+        <h2>{{dato.nombreLibro ? dato.nombreLibro : "Sin nombre"}}</h2>
+        <img src="{{dato.imagen}}" class="card_imagen" />
         <div class='card_text'>
           <p></p>
-          <p>{{dato.description ? dato.description : "Sin descripción"}}</p>
+          <p>{{dato.descripcion ? dato.descripcion : "Sin descripción"}}</p>
           <h5>Creadores: </h5>
-          <p>{{dato.creators.items[0] ? '- '+dato.creators.items[0].name : "No parecen creadores"}}</p>
-          <p>{{dato.creators.items[1] ? '- '+dato.creators.items[1].name : ""}}</p>
-          <p>{{dato.creators.items[2] ? '- '+dato.creators.items[2].name : ""}}</p>
-          <p>{{dato.creators.items[3] ? '- '+dato.creators.items[3].name : ""}}</p>
-          <p>{{dato.creators.items[4] ? '- '+dato.creators.items[4].name : ""}}</p>
-          <h5>Personajes: </h5>
-          <p>{{dato.characters.items[0] ? '- '+dato.characters.items[0].name : "No aparecen personajes"}}</p>
-          <p>{{dato.characters.items[1] ? '- '+dato.characters.items[1].name : ""}}</p>
-          <p>{{dato.characters.items[2] ? '- '+dato.characters.items[2].name : ""}}</p>
-          <p>{{dato.characters.items[3] ? '- '+dato.characters.items[3].name : ""}}</p>
-          <p>{{dato.characters.items[4] ? '- '+dato.characters.items[4].name : ""}}</p>
+          <p>{{dato.autor ? '- '+dato.autor : "No parecen creadores"}}</p>
+         <h5>Lenguaje: </h5>
+           <p>{{dato.idioma ? '- '+dato.idioma : ""}}</p>
           <h5>Número de paginas: </h5>
-          <p>{{dato.pageCount ? dato.pageCount : ""}}</p>
-        </div>
+          <p>{{dato.numeroPagina ? dato.numeroPagina : ""}}</p>
+          <h5>Publicado por: </h5>
+          <p>{{dato.fechaPublicacion ? dato.fechaPublicacion : ""}} en {{dato.publisher_date}}</p>
+        </div><br>
+        <button class="btn btn-primary" type="button" (click)="addCarro()" >Agregar</button>
       </div>
     </div>
   </div>

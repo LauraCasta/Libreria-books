@@ -28,6 +28,11 @@ text-align: start;
   pointer-events: none;
 }
 
+button{
+  margin-left: 30%;
+  text-align: center;
+}
+
 h3{
   margin: 20px;
   text-align: center;

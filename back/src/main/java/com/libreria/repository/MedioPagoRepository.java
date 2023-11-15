@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface MedioPagoRepository extends JpaRepository<MedioPagoEntity, Integer> {
-    Optional<MedioPagoEntity> findByIdPago(int idPago);
+    Optional<MedioPagoEntity> findByIdMedioPago(int idPago);
 }

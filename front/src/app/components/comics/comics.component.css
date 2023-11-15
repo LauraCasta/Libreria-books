@@ -36,3 +36,8 @@ h3{
   font-size: 40px;
   font-family: arial;
 }
+
+button{
+  margin-left: 30%;
+  text-align: center;
+}

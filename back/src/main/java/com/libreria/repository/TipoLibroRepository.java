@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface TipoLibroRepository extends JpaRepository<TipoLibroEntity, Integer> {
-    Optional<TipoLibroEntity> findByIdTpLibro(int idTpLibro);
+    Optional<TipoLibroEntity> findByIdTipoLibro(int idTpLibro);
 }
