@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -6,18 +6,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" routerLink='/home' aria-current="page" >Inicio</a>
+          <button type="button" class="btn btn-dark" routerLink='/home' aria-current="page" >Inicio</button>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink='/home' role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Cátalogo
-          </a>
+          <button type="button" class="btn btn-dark" routerLink='/catalogo'>Catálogo</button>
+          <button class="btn btn-dark dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink='/home'>Comics</a></li>
-            <li><a class="dropdown-item" routerLink='/home'>Educación</a></li>
-            <li><a class="dropdown-item" routerLink='/home'>Historia</a></li>
-            <li><a class="dropdown-item" routerLink='/home'>Juvenil</a></li>
-            <li><a class="dropdown-item" routerLink='/home'>Programación</a></li>
+            <li><a class="dropdown-item" routerLink='/comics'>Comics</a></li>
+            <li><a class="dropdown-item" routerLink='/education'>Educación</a></li>
+            <li><a class="dropdown-item" routerLink='/history'>Historia</a></li>
+            <li><a class="dropdown-item" routerLink='/juvenil'>Juvenil</a></li>
+            <li><a class="dropdown-item" routerLink='/programacion'>Programación</a></li>
           </ul>
         </li>
       </ul>
@@ -39,17 +39,6 @@
           </ul>
         </div>
       </ng-template>
-      <div class="dropdown">
-        <a class="btn btn-primary dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Mi cuenta
-        </a>
-        <ul class="dropdown-menu" >
-          <li><a class="dropdown-item" routerLink='/dashboard'>Mis datos</a></li>
-          <li><a class="dropdown-item" routerLink='/home'>Mis compras</a></li>
-          <li><a class="dropdown-item" routerLink='/home'>Cambiar contraseña</a></li>
-          <li><a class="dropdown-item" (click)="cerrarSesion()">Cerrar Sesión</a></li>
-        </ul>
-      </div>
     </div>
   </div>
 </nav>

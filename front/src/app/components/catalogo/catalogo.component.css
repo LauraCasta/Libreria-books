@@ -1,0 +1,11 @@
+.card:hover{
+  box-shadow: 5px 10px 20px 10px red;
+  }
+  .card{
+    margin: 2.5%;
+    font-size: calc(10px + 2vmin);
+    color: black;
+    width: 20rem;
+    height: 70px;
+    text-align: center;
+  }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
@@ -10,6 +11,15 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutingModule } from './app.routing';
+import { ComicsComponent } from './components/comics/comics.component';
+import { HistoryComponent } from './components/history/history.component';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { ProgramacionComponent } from './components/programacion/programacion.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { JuvenilComponent } from './components/juvenil/juvenil.component';
+import { FacturaComponent } from './components/factura/factura.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
+import { PagoComponent } from './components/pago/pago.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +30,21 @@ import { AppRoutingModule } from './app.routing';
     RegistroComponent,
     LandingPageComponent,
     DashboardComponent,
+    ComicsComponent,
+    HistoryComponent,
+    CatalogoComponent,
+    ProgramacionComponent,
+    EducacionComponent,
+    JuvenilComponent,
+    FacturaComponent,
+    CarritoComponent,
+    PagoComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
