@@ -1,10 +1,11 @@
-<div className="card_datos">
-  <div *ngFor="let dato of datoComic"  className="card_fila" key={{dato.id}}>
-    <div className="card">
-      <div className="card-body">
+<h3>Catálogo de Comics</h3>
+<div class="container">
+  <div class="card_fila" *ngFor="let dato of allComics | async" >
+    <div class="card" style="width: 20rem;" >
+      <div class="card-body">
         <h2>{{dato.title ? dato.title : "Sin nombre"}}</h2>
-        <!---<img src={{dato.thumbnail.path+'.'+dato.thumbnail.extension}} className="card_imagen" />-->
-        <div className='card_text'>
+        <img src="{{dato.thumbnail.path+'.'+dato.thumbnail.extension}}" class="card_imagen" />
+        <div class='card_text'>
           <p></p>
           <p>{{dato.description ? dato.description : "Sin descripción"}}</p>
           <h5>Creadores: </h5>
@@ -22,6 +23,7 @@
           <h5>Número de paginas: </h5>
           <p>{{dato.pageCount ? dato.pageCount : ""}}</p>
         </div>
+        <button type="button" (click)="addCarro()" >Agregar</button>
       </div>
     </div>
   </div>

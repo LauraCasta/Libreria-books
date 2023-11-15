@@ -13,6 +13,7 @@ import { ProgramacionComponent } from "./components/programacion/programacion.co
 import { CarritoComponent } from "./components/carrito/carrito.component";
 import { FacturaComponent } from "./components/factura/factura.component";
 import { PagoComponent } from "./components/pago/pago.component";
+import { CatalogoComponent } from "./components/catalogo/catalogo.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'education', component: EducacionComponent},
   { path: 'programacion', component: ProgramacionComponent},
   { path: 'carrito', component: CarritoComponent},
+  { path: 'catalogo', component: CatalogoComponent},
   { path: 'factura', component: FacturaComponent},
   { path: 'pago', component: PagoComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},

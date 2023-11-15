@@ -1,1 +1,45 @@
-<p>pago works!</p>
+<div class="container">
+  <div class="card_detalle mt-4" style="width: 17rem;">
+    <div class="card-body">
+      <h6 style="color:white" class="card-title">Detalle de la compra</h6>
+    </div>
+  </div>
+  <div class="card_factura  mt-4" style="width: 17rem;">
+    <div class="card-body">
+      <h6 class="card-title">Fatura de compra</h6>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card mx-4 mt-4" style="width: 35rem;">
+    <div class="card-body">
+      <h5 class="card-title">Detalles de la compra</h5><br>
+      <p class="card-text">Completa los datos solicitados</p>
+      <div class="mb-3">
+        <h6 class="card-subtitle mb-2 text-body-secondary">Nombre Completo</h6>
+        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="nombre completo" />
+      </div>
+      <div class="mb-3">
+        <h6 class="card-subtitle mb-2 text-body-secondary">Correo electronico</h6>
+        <input type="email" name="correo" id="correo" class="form-control" placeholder="name@example.com" />
+      </div>
+      <div class="mb-3">
+        <h6 class="card-subtitle mb-2 text-body-secondary">Direccion</h6>
+        <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Direccion" />
+      </div>
+      <div class="mb-3">
+        <h6 class="card-subtitle mb-2 text-body-secondary">Items</h6>
+        <p class="card-text">items agregar ngfor...</p>
+      </div>
+      <div class="mb-3">
+        <h6 class="card-subtitle mb-2 text-body-secondary">Medio de pago</h6>
+        <p class="card-text">medio...</p>
+      </div>
+      <div class="mb-3">
+        <h6 class="card-subtitle mb-2 text-body-secondary">Total pagado</h6>
+        <p class="card-text">total...</p>
+      </div>
+      <button type="button" class="btn btn-primary" routerLink='/factura' >Pagar</button>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,23 @@
-<p>programacion works!</p>
+<h3>Catálogo de Programación</h3>
+<div class="container">
+  <div class="card_fila" *ngFor="let dato of allBooks |json" style="width: 20rem;" >
+    <div class="card me-4" style="width: 20rem;" >
+      <div class="card-body" >
+        <h2>{{dato.title ? dato.title : "Sin nombre"}}</h2>
+        <!--<img src="{{dato.thumbnail.path+'.'+dato.thumbnail.extension}}" class="card_imagen" />-->
+        <div class='card_text'>
+          <p></p>
+          <p>{{dato.contect ? dato.contect : "Sin descripción"}}</p>
+          <h5>Creadores: </h5>
+          <p>{{dato.author ? '- '+dato.author : "No parecen creadores"}}</p>
+         <h5>Lenguaje: </h5>
+           <p>{{dato.language ? '- '+dato.language : ""}}</p>
+          <h5>Número de paginas: </h5>
+          <p>{{dato.pages ? dato.pages : ""}}</p>
+          <h5>Publicado por: </h5>
+          <p>{{dato.publisher ? dato.publisher : ""}} en {{dato.publisher_date}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

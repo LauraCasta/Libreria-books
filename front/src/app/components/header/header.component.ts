@@ -28,6 +28,4 @@ export class HeaderComponent implements OnInit{
       Swal.fire('Se cerro con exito la cuenta');
     }
   }
-
-
 }

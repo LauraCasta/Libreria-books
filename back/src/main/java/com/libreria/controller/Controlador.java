@@ -1,9 +1,10 @@
 package com.libreria.controller;
 
-import com.libreria.dto.ProductoModelMapper;
-import com.libreria.dto.ProductosDTO;
-import com.libreria.entity.ProductosEntity;
-import com.libreria.service.ProductService;
+import com.libreria.entity.CarritoEntity;
+import com.libreria.entity.TipoLibroEntity;
+import com.libreria.service.CarritoService;
+import com.libreria.service.TipoLibroService;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -19,14 +20,33 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/carritoCompras")
+@RequestMapping("/api/Libreria")
 public class Controlador {
     @Autowired
-    private ProductService service;
-    @Autowired
-    private ProductoModelMapper mapModel;
+    private TipoLibroService tipoLibroService;
 
+    // Tipo Libro 
     @Operation(
+            summary = "Obtener todos los TiposLibros",
+            description = "Get a TiposLibros ",
+            tags = {"Libro", "get"})
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "lista de TiposLibros obtenida con exito", content = {@Content(array = @ArraySchema(schema = @Schema(implementation = CarritoEntity.class)), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "404", description = "No se encontraron TiposLibros", content = {@Content(schema = @Schema())}),
+            @ApiResponse(responseCode = "500", description = "Error interno", content = {@Content(schema = @Schema())})})
+
+    @GetMapping("/mostrarTiposLibros")
+    public ResponseEntity<List<TipoLibroEntity>> mostrarProductos() {
+        List<TipoLibroEntity> listaTipoLibro = tipoLibroService.getTiposLibros();
+        if (listaTipoLibro.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(listaTipoLibro);
+        }
+    }
+
+
+    /**@Operation(
             summary = "Insertar productos",
             description = "Post productos ",
             tags = {"Carrito compras", "post"})
@@ -35,10 +55,9 @@ public class Controlador {
             @ApiResponse(responseCode = "404", description = "No se agregaron los productos", content = {@Content(schema = @Schema())}),
             @ApiResponse(responseCode = "500", description = "Error interno", content = {@Content(schema = @Schema())})})
 
-    @PostMapping("/agregarProductos")
-    public ResponseEntity<Boolean> agregarProductos(@RequestBody List<ProductosDTO> productoDto) {
+    @PostMapping("/agregarLibro")
+    public ResponseEntity<Boolean> agregarProductos(@RequestBody CarritoEntity producto) {
         try {
-            ProductosEntity producto = mapModel.mapProductoEntity(productoDto);
             service.postProductos(producto);
             return new ResponseEntity<>(true,HttpStatus.CREATED);
         } catch (Exception e) {
@@ -50,13 +69,13 @@ public class Controlador {
             description = "Get a productos ",
             tags = {"Carrito compras", "get"})
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "lista de productos obtenida con exito", content = {@Content(array = @ArraySchema(schema = @Schema(implementation = ProductosEntity.class)), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "200", description = "lista de productos obtenida con exito", content = {@Content(array = @ArraySchema(schema = @Schema(implementation = CarritoEntity.class)), mediaType = "application/json")}),
             @ApiResponse(responseCode = "404", description = "No se encontraron productos", content = {@Content(schema = @Schema())}),
             @ApiResponse(responseCode = "500", description = "Error interno", content = {@Content(schema = @Schema())})})
 
     @GetMapping("/mostrarProductos")
-    public ResponseEntity<List<ProductosEntity>> mostrarProductos() {
-        List<ProductosEntity> listaProductos = service.getProductos();
+    public ResponseEntity<List<CarritoEntity>> mostrarProductos() {
+        List<CarritoEntity> listaProductos = service.getProductos();
         if (listaProductos.isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
@@ -75,7 +94,7 @@ public class Controlador {
 
     @DeleteMapping("/eliminarProducto/{codigo}")
     public ResponseEntity<Boolean> eliminarProducto(@PathVariable("codigo") String codigo) {
-        Optional<ProductosEntity> producto = service.getProducto(codigo);
+        Optional<CarritoEntity> producto = service.getProducto(codigo);
         try {
             if(producto.isPresent()) {
                 service.deleteProducto(producto.get().getNumIdProducto());
@@ -93,14 +112,14 @@ public class Controlador {
             description = "Put producto ",
             tags = {"Carrito compras", "put"})
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Se ha modificado el producto", content = {@Content(schema = @Schema(implementation = ProductosEntity.class))}),
+            @ApiResponse(responseCode = "200", description = "Se ha modificado el producto", content = {@Content(schema = @Schema(implementation = CarritoEntity.class))}),
             @ApiResponse(responseCode = "404", description = "El dato no existe", content = {@Content(schema = @Schema())}),
             @ApiResponse(responseCode = "500", description = "Error interno", content = {@Content(schema = @Schema())})
     })
 
     @PutMapping("/actualizarProducto")
-    public ResponseEntity<Boolean> actualizarProducto(@RequestBody ProductosEntity producto) {
-        Optional<ProductosEntity> productoId = service.getProducto(producto.getStrCodigoProducto());
+    public ResponseEntity<Boolean> actualizarProducto(@RequestBody CarritoEntity producto) {
+        Optional<CarritoEntity> productoId = service.getProducto(producto.getStrCodigoProducto());
         if (productoId.isPresent()) {
             service.putProducto(producto);
             return new ResponseEntity<>(true,HttpStatus.OK);
@@ -114,14 +133,14 @@ public class Controlador {
             description = "Put cantidad",
             tags = {"Carrito compras", "put"})
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Se ha modificado la cantidad del producto", content = {@Content(schema = @Schema(implementation = ProductosEntity.class))}),
+            @ApiResponse(responseCode = "200", description = "Se ha modificado la cantidad del producto", content = {@Content(schema = @Schema(implementation = CarritoEntity.class))}),
             @ApiResponse(responseCode = "404", description = "El dato no existe", content = {@Content(schema = @Schema())}),
             @ApiResponse(responseCode = "500", description = "Error interno", content = {@Content(schema = @Schema())})
     })
 
     @PutMapping("/actualizarCantidad/{codigo}")
     public ResponseEntity<String> actualizarCantidad(@PathVariable("codigo") String codigo,@RequestParam int cantidad) {
-        Optional<ProductosEntity> productoData = service.getProducto(codigo);
+        Optional<CarritoEntity> productoData = service.getProducto(codigo);
         if (productoData.isPresent()) {
             try{
                 productoData.get().setNumCantidad(cantidad);
@@ -133,5 +152,5 @@ public class Controlador {
         } else {
             return new ResponseEntity<>("El producto no existe",HttpStatus.NOT_FOUND);
         }
-    }
+    }*/
 }
