@@ -28,7 +28,11 @@ public class UsuarioEntity {
     private String celular;
     @Column(name = "SESION", nullable = false)
     private Boolean sesion;
-    
+    @Column(name = "CONTRASE", nullable = false)
+    private String contrase;
+    @Column(name = "NOMUSUARIO", nullable = false)
+    private String nomUsuario;
+
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -83,5 +87,18 @@ public class UsuarioEntity {
     public void setIdTipoUsuario(TipoUsuarioEntity idTipoUsuario) {
         this.idTipoUsuario = idTipoUsuario;
     }
+    public String getContrase() {
+        return contrase;
+    }
+    public void setContrase(String contrase) {
+        this.contrase = contrase;
+    }
+    public String getNomUsuario() {
+        return nomUsuario;
+    }
+    public void setNomUsuario(String nomUsuario) {
+        this.nomUsuario = nomUsuario;
+    }
+    
 
 }

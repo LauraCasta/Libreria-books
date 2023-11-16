@@ -1,0 +1,6 @@
+projectKey=Libreriaback
+serverUrl=http://localhost:9002
+serverVersion=9.9.1.69595
+dashboardUrl=http://localhost:9002/dashboard?id=Libreriaback
+ceTaskId=AYvVJsuiHQ_Zs87kBVfq
+ceTaskUrl=http://localhost:9002/api/ce/task?id=AYvVJsuiHQ_Zs87kBVfq

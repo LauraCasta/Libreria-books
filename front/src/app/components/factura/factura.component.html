@@ -6,7 +6,7 @@
   </div>
   <div class="card_factura  mt-4" style="width: 17rem;">
     <div class="card-body">
-      <h6 style="color:white" class="card-title">Fatura de compra</h6><br>
+      <h6 style="color:white" class="card-title">Factura de compra</h6><br>
     </div>
   </div>
 </div>
@@ -16,17 +16,25 @@
       <h5 class="card-title">La compra fue</h5><br>
       <p class="card-text">Exitosa...</p>
       <h6 class="card-subtitle mb-2 text-body-secondary">Nombre Completo</h6>
-      <p class="card-text">nombre...</p>
+      <p class="card-text">{{allDetalle.idFactura.idUsuario.nombre+" "+allDetalle.idFactura.idUsuario.apellido }} </p>
       <h6 class="card-subtitle mb-2 text-body-secondary">Correo electronico</h6>
-      <p class="card-text">correo...</p>
+      <p class="card-text">{{allDetalle.idFactura.idUsuario.correo}}</p>
       <h6 class="card-subtitle mb-2 text-body-secondary">Direccion</h6>
-      <p class="card-text">direccion...</p>
+      <p class="card-text">{{allDetalle.idFactura.direccion}}.</p>
       <h6 class="card-subtitle mb-2 text-body-secondary">Items</h6>
-      <p class="card-text">items agregar ngfor...</p>
+      <tr class="woocommerce-cart-form__cart-item cart_item" *ngFor="let dato of allBooks | async" >
+        <td class="imagen">
+          <img src="{{dato.idLibro.imagen}}" class="card_imagen" />
+        </td>
+        <td class="nombre">
+          <p class="card-text">{{dato.idLibro.nombreLibro}}</p>
+        </td>
+      </tr>
       <h6 class="card-subtitle mb-2 text-body-secondary">Medio de pago</h6>
-      <p class="card-text">medio...</p>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Total pagado</h6>
-      <p class="card-text">total...</p>
+      <p class="card-text">{{allDetalle.idFactura.idMedioPago.medioPago}}</p>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Total</h6>
+      <p class="card-text">{{allDetalle.idFactura.totalCompra}}</p>
+    <button class="btn btn-primary" routerLink="/Catalogo">Finalizar</button>
     </div>
   </div>
 </div>

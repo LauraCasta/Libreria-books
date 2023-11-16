@@ -3,8 +3,9 @@
   transition: 0.3s;
   border-radius: 10px; /* 5px rounded corners */
   width: 100vh;
-  height: 75vh;
-}
+  height: 100%
+  }
+
 .card_detalle {
   background-color: whitesmoke;
   height: 55px;
@@ -15,14 +16,30 @@
   background-color:mediumblue;
   height: 55px;
 }
+
+button{
+  margin-left: 45%;
+  text-align: center;
+  height: 55px;
+}
+
 .card-title{
   text-align: center;
 }
 .container{
   display: grid;
   grid-template-columns: (2,1fr);
+  width: 80%;
+  height: 100%;
 }
 .container{
   display: flex;
   justify-content: center;
+  width: 80%;
+  height: 100%;
+}
+.card_imagen {
+  margin: 10px;
+  width: 40%;
+  height: 40%;
 }

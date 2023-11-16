@@ -17,3 +17,62 @@
     font-weight: 700;
     border: 0;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  font-size: calc(10px + 2vmin);
+  color: black
+}
+
+.card_imagen {
+  margin: 10px;
+  width: 40%;
+  height: 40%;
+}
+table{
+  margin: 20px;
+  text-align: center;
+  height: 90%;
+  width: 95%;
+}
+button{
+  margin-left: 50%;
+  text-align: center;
+}
+
+.product-remove{
+  width: 7%;
+}
+
+.product-name{
+  width: 25%;
+}
+
+.product-price{
+  width: 25%;
+}
+
+.product-thumbnail{
+  width: 25%;
+}
+
+.product-quantity{
+  width: 15%;
+}
+
+.product-total{
+  width: 45%;
+}
+h3{
+  margin: 20px;
+  text-align: center;
+  background: rgb(196, 28, 28);
+  color: white;
+  font-size: 40px;
+  font-family: arial;
+}

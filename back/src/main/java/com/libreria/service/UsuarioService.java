@@ -1,5 +1,7 @@
 package com.libreria.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +13,12 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository repository;
 
-    public UsuarioEntity getUsuario(int codigo){
-        return repository.findByIdUsuario(codigo);
+    public Optional<UsuarioEntity> getUsuario(String user){
+        return repository.findByNomUsuario(user);
+    }
+
+    public void postUsuario(UsuarioEntity usuario){
+        repository.save(usuario);
     }
 
 }

@@ -2,11 +2,15 @@ package com.libreria.controller;
 
 import com.libreria.entity.CarritoEntity;
 import com.libreria.entity.CategoriaEntity;
+import com.libreria.entity.DetalleFacturaEntity;
+import com.libreria.entity.InventarioEntity;
 import com.libreria.entity.LibroCarritoEntity;
 import com.libreria.entity.LibrosEntity;
+import com.libreria.entity.MedioPagoEntity;
 import com.libreria.entity.TipoDocumentoEntity;
 import com.libreria.entity.TipoLibroEntity;
 import com.libreria.entity.TipoUsuarioEntity;
+import com.libreria.entity.UsuarioEntity;
 import com.libreria.service.CarritoService;
 import com.libreria.service.CategoriaService;
 import com.libreria.service.DetalleFacturaService;
@@ -246,6 +250,29 @@ public class Controlador {
         }
     }
 
+    @Operation(
+            summary = "Obtener todos los Usuario",
+            description = "Get a Usuario ",
+            tags = {"Usuario", "get"})
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "lista de Usuario obtenida con exito", content = {@Content(array = @ArraySchema(schema = @Schema(implementation = UsuarioEntity.class)), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "404", description = "No se encontraron Usuario", content = {@Content(schema = @Schema())}),
+            @ApiResponse(responseCode = "500", description = "Error interno", content = {@Content(schema = @Schema())})})
+
+    @GetMapping("/mostrarUsuario/{nomUser}&contrase={contrase}")
+    public ResponseEntity<Optional<UsuarioEntity>> mostrarUsuario(@PathVariable("nomUser") String nomUser, @PathVariable("contrase") String contra) {
+        Optional<UsuarioEntity> usuario = usuarioService.getUsuario(nomUser);
+        if (usuario.isPresent()) {
+            //if(usuario.get().getContrase()==contra){
+                return ResponseEntity.ok(usuario);
+            //}else{
+                
+            //return ResponseEntity.notFound().build();
+            //}            
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
     // carrito
     @Operation(
             summary = "Insertar Carrito",
@@ -256,10 +283,18 @@ public class Controlador {
             @ApiResponse(responseCode = "404", description = "No se agregaron los Carrito", content = {@Content(schema = @Schema())}),
             @ApiResponse(responseCode = "500", description = "Error interno", content = {@Content(schema = @Schema())})})
 
-    @PostMapping("/agregarLibro")
-    public ResponseEntity<Boolean> agregarCarrito(@RequestBody CarritoEntity producto) {
+    @PostMapping("/agregarLibro/{id}")
+    public ResponseEntity<Boolean> agregarCarrito(@PathVariable("id")int id) {
+        Optional<LibrosEntity> libro = librosService.getLibro(id);
+        LibroCarritoEntity item = new LibroCarritoEntity(); 
+        CarritoEntity carrito = new CarritoEntity();
         try {
-            carritoService.postCarrito(producto);
+            carrito.setIdCarrito(1);
+            item.setIdLibro(libro.get());
+            item.setIdCarrito(carrito);
+            item.setCantidad(1);
+            item.setTotal(libro.get().getValorUnidad());
+            librocarritoService.postItem(item);
             return new ResponseEntity<>(true,HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(false,HttpStatus.INTERNAL_SERVER_ERROR);
@@ -349,6 +384,64 @@ public class Controlador {
             }
         } else {
             return new ResponseEntity<>("El producto no existe",HttpStatus.NOT_FOUND);
+        }
+    }
+
+    //Inventario
+    @Operation(
+        summary = "Obtener un Inventario",
+        description = "Get a Carrito ",
+        tags = {"Intentario", "get"})
+@ApiResponses({
+        @ApiResponse(responseCode = "200", description = "lista de Carrito obtenida con exito", content = {@Content(array = @ArraySchema(schema = @Schema(implementation = InventarioEntity.class)), mediaType = "application/json")}),
+        @ApiResponse(responseCode = "404", description = "No se encontraron Carrito", content = {@Content(schema = @Schema())}),
+        @ApiResponse(responseCode = "500", description = "Error interno", content = {@Content(schema = @Schema())})})
+
+@GetMapping("/mostrarInventario/{codigo}")
+public ResponseEntity<Optional<InventarioEntity>> mostrarInventario(@PathVariable("codigo") int codigo) {
+    Optional<InventarioEntity> inven = inventarioService.getLibroInven(codigo);
+    if (inven.isEmpty()) {
+        return ResponseEntity.notFound().build();
+    } else {
+        return ResponseEntity.ok(inven);
+    }
+}
+    // compra 
+    @Operation(
+            summary = "Obtener Detallefactura",
+            description = "Get a Detalle ",
+            tags = {"Compra", "get"})
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "lista de Carrito obtenida con exito", content = {@Content(array = @ArraySchema(schema = @Schema(implementation = DetalleFacturaEntity.class)), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "404", description = "No se encontraron Carrito", content = {@Content(schema = @Schema())}),
+            @ApiResponse(responseCode = "500", description = "Error interno", content = {@Content(schema = @Schema())})})
+
+    @GetMapping("/mostrarDetalle/{codigo}")
+    public ResponseEntity<Optional<DetalleFacturaEntity>> mostrardetalle(@PathVariable("codigo") int codigo) {
+        Optional<DetalleFacturaEntity> detalle = detalleFacturaService.getDetalle(codigo);
+        if (detalle.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(detalle);
+        }
+    }
+
+    @Operation(
+            summary = "Obtener Medio pago",
+            description = "Get a Detalle ",
+            tags = {"Compra", "get"})
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "lista de Carrito obtenida con exito", content = {@Content(array = @ArraySchema(schema = @Schema(implementation = MedioPagoEntity.class)), mediaType = "application/json")}),
+            @ApiResponse(responseCode = "404", description = "No se encontraron Carrito", content = {@Content(schema = @Schema())}),
+            @ApiResponse(responseCode = "500", description = "Error interno", content = {@Content(schema = @Schema())})})
+
+    @GetMapping("/mostrarDetalle")
+    public ResponseEntity<List<MedioPagoEntity>> mostrarMedio() {
+        List<MedioPagoEntity> pago = medioPagoService.getMedioPago();
+        if (pago.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(pago);
         }
     }
 }

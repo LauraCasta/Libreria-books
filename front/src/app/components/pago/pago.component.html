@@ -17,11 +17,11 @@
       <p class="card-text">Completa los datos solicitados</p>
       <div class="mb-3">
         <h6 class="card-subtitle mb-2 text-body-secondary">Nombre Completo</h6>
-        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="nombre completo" />
+        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="{{allDetalle.idFactura.idUsuario.nombre}}" />
       </div>
       <div class="mb-3">
         <h6 class="card-subtitle mb-2 text-body-secondary">Correo electronico</h6>
-        <input type="email" name="correo" id="correo" class="form-control" placeholder="name@example.com" />
+        <input type="email" name="correo" id="correo" class="form-control" placeholder="{{allDetalle.idFactura.idUsuario.correo}}"/>
       </div>
       <div class="mb-3">
         <h6 class="card-subtitle mb-2 text-body-secondary">Direccion</h6>
@@ -29,15 +29,22 @@
       </div>
       <div class="mb-3">
         <h6 class="card-subtitle mb-2 text-body-secondary">Items</h6>
-        <p class="card-text">items agregar ngfor...</p>
+        <tr class="woocommerce-cart-form__cart-item cart_item" *ngFor="let dato of allBooks | async" >
+          <td class="imagen">
+            <img src="{{dato.idLibro.imagen}}" class="card_imagen" />
+          </td>
+          <td class="nombre">
+            <p class="card-text">{{dato.idLibro.nombreLibro}}</p>
+          </td>
+        </tr>
       </div>
       <div class="mb-3">
         <h6 class="card-subtitle mb-2 text-body-secondary">Medio de pago</h6>
         <p class="card-text">medio...</p>
       </div>
       <div class="mb-3">
-        <h6 class="card-subtitle mb-2 text-body-secondary">Total pagado</h6>
-        <p class="card-text">total...</p>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Total a pagar </h6>
+        <p class="card-text">{{allDetalle.idCarrito.total}}</p>
       </div>
       <button type="button" class="btn btn-primary" routerLink='/factura' >Pagar</button>
     </div>
