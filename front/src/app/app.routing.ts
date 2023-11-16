@@ -26,8 +26,8 @@ const routes: Routes = [
   { path: 'programacion', component: ProgramacionComponent},
   { path: 'carrito', component: CarritoComponent},
   { path: 'catalogo', component: CatalogoComponent},
-  { path: 'factura', component: FacturaComponent},
-  { path: 'pago', component: PagoComponent},
+  { path: 'factura', component: FacturaComponent,canActivate: [AuthGuard]},
+  { path: 'pago', component: PagoComponent,canActivate: [AuthGuard]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo:'login', pathMatch: 'full'},
 ];

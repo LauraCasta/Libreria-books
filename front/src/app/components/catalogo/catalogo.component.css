@@ -2,6 +2,7 @@
   box-shadow: 5px 10px 20px 10px red;
   }
   .card{
+
     margin: 2.5%;
     font-size: calc(10px + 2vmin);
     color: black;
@@ -9,3 +10,14 @@
     height: 70px;
     text-align: center;
   }
+
+.imagen{
+  grid-column: 2;
+  grid-row: 1 / 5;
+}
+.card_imagen{
+  grid-column: 2;
+  margin: 10px;
+  width: 60%;
+  height: 60%;
+}

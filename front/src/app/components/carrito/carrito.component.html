@@ -1,1 +1,88 @@
-<p>carrito works!</p>
+<h3>Carrito de Compras</h3>
+<div id="container" role="main" class="main-page " bis_skin_checked="1">
+  <div class="post-9 page type-page status-publish hentry" bis_skin_checked="1">
+    <div class="entry-content" bis_skin_checked="1">
+      <div class="entry-summary" bis_skin_checked="1">
+        <div class="woocommerce" bis_skin_checked="1">
+          <div class="woocommerce-notices-wrapper" bis_skin_checked="1"></div>
+          <form class="woocommerce-cart-form" action="" method="post">
+
+            <table class="table table-striped-columns me-4" cellspacing="0">
+              <thead>
+                <tr>
+                  <th class="product-remove">&nbsp;</th>
+                  <th class="product-thumbnail">&nbsp;</th>
+                  <th class="product-name">Producto</th>
+                  <th class="product-price">Precio</th>
+                  <th class="product-quantity">Cantidad</th>
+                  <th class="product-total">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="woocommerce-cart-form__cart-item cart_item" *ngFor="let dato of allBooks | async" >
+
+                  <td class="product-remove">
+                    <button class="btn btn-danger">×</button>
+                  </td>
+
+                  <td class="product-thumbnail">
+                    <img src="{{dato.idLibro.imagen}}" class="card_imagen" />
+                  </td>
+
+                  <td class="product-name" data-title="Producto">
+                    <a>{{dato.idLibro.nombreLibro}}</a>
+                  </td>
+
+                 <td class="product-price" data-title="Precio">
+                    <span >{{dato.idLibro.valorUnidad}}</span>
+                  </td>
+                  <td class="product-quantity" data-title="Cantidad">
+                    <input type="number" id="quantity_65544af897d5b" class="input-text qty text" step="1" min="0" max=""
+                      name="cart[a322852ce0df73e204b7e67cbbef0d0a][qty]" value="{{dato.cantidad}}" title="Cantidad" size="4"
+                      placeholder="" inputmode="numeric">
+                  </td>
+
+                  <td class="product-total" data-title="Total">
+                    <span class="woocommerce-Price-amount amount"
+                      data-original="<bdi><span class=&quot;woocommerce-Price-currencySymbol&quot;>$</span>20,000</bdi>"
+                      data-price="20000" title="Original price:20000">{{dato.total}}</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+
+
+          <div class="cart-collaterals" bis_skin_checked="1">
+            <div class="products-wrapper" bis_skin_checked="1">
+              <div class="cart_totals " bis_skin_checked="1">
+
+
+                <h2>Total del carrito</h2>
+
+                <table cellspacing="0" class="shop_table shop_table_responsive">
+
+
+                  <tr class="order-total">
+                    <th>Total</th>
+                    <td data-title="Total"><br>
+                      <span class="woocommerce-Price-amount amount"
+                          data-price="20000" title="Original price:20000">{{carrito.total}}</span>
+                         </td>
+                  </tr>
+
+                </table>
+
+                <div class="wc-proceed-to-checkout" bis_skin_checked="1">
+                  <button class="btn btn-primary" routerLink="/pago"> Finalizar compra</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="clearfix" bis_skin_checked="1"></div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+"filename", "language", "Java Properties", "TypeScript", "HTML", "CSS", "comment", "blank", "total"
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\sonar-project.properties", "Java Properties", 6, 0, 0, 0, 0, 0, 6
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\carrito\carrito.component.css", "CSS", 0, 0, 0, 69, 0, 9, 78
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\carrito\carrito.component.html", "HTML", 0, 0, 71, 0, 0, 16, 87
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\carrito\carrito.component.spec.ts", "TypeScript", 0, -17, 0, 0, 0, -5, -22
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\carrito\carrito.component.ts", "TypeScript", 0, 17, 0, 0, 0, 2, 19
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\catalogo\catalogo.component.css", "CSS", 0, 0, 0, 10, 0, 2, 12
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\catalogo\catalogo.component.html", "HTML", 0, 0, 0, 0, 1, 1, 2
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\comics\comics.component.css", "CSS", 0, 0, 0, 4, 0, 1, 5
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\educacion\educacion.component.css", "CSS", 0, 0, 0, 4, 0, 2, 6
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\educacion\educacion.component.html", "HTML", 0, 0, -5, 0, 0, 0, -5
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\educacion\educacion.component.ts", "TypeScript", 0, 12, 0, 0, 1, 0, 13
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\factura\factura.component.css", "CSS", 0, 0, 0, 14, 0, 3, 17
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\factura\factura.component.html", "HTML", 0, 0, 8, 0, 0, 0, 8
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\factura\factura.component.ts", "TypeScript", 0, 17, 0, 0, 0, 2, 19
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\history\history.component.css", "CSS", 0, 0, 0, 4, 0, 1, 5
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\history\history.component.html", "HTML", 0, 0, -5, 0, 0, 0, -5
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\history\history.component.ts", "TypeScript", 0, 12, 0, 0, 1, 0, 13
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\juvenil\juvenil.component.css", "CSS", 0, 0, 0, 4, 0, 1, 5
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\juvenil\juvenil.component.html", "HTML", 0, 0, -5, 0, 0, 0, -5
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\juvenil\juvenil.component.ts", "TypeScript", 0, 12, 0, 0, 1, -1, 12
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\pago\pago.component.css", "CSS", 0, 0, 0, 5, 0, 1, 6
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\pago\pago.component.html", "HTML", 0, 0, 7, 0, 0, 0, 7
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\pago\pago.component.ts", "TypeScript", 0, 17, 0, 0, 0, 2, 19
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\programacion\programacion.component.css", "CSS", 0, 0, 0, 4, 0, 2, 6
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\programacion\programacion.component.html", "HTML", 0, 0, 2, 0, -1, 0, 1
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\components\programacion\programacion.component.ts", "TypeScript", 0, 12, 0, 0, 1, -1, 12
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\services\catalogo\carrito.service.ts", "TypeScript", 0, 19, 0, 0, 0, 7, 26
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\services\catalogo\educacion.service.ts", "TypeScript", 0, 15, 0, 0, 0, 7, 22
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\services\catalogo\historia.service.ts", "TypeScript", 0, 15, 0, 0, 0, 7, 22
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\services\catalogo\juvenil.service.ts", "TypeScript", 0, 15, 0, 0, 0, 7, 22
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\services\catalogo\programacion.service.ts", "TypeScript", 0, -1, 0, 0, 0, 0, -1
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\services\compra\auth.service.ts", "TypeScript", 0, -69, 0, 0, 0, -12, -81
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\services\compra\detalle.service.ts", "TypeScript", 0, 21, 0, 0, 0, 7, 28
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\services\interfaces\detalle.interface.ts", "TypeScript", 0, 38, 0, 0, 0, 1, 39
+"c:\Users\valet\OneDrive\Documents\universidad\GestionCalidad\Libreria-books\front\src\app\services\interfaces\inventario.interface.ts", "TypeScript", 0, 24, 0, 0, 0, 1, 25
+"Total", "-", 6, 159, 73, 118, 4, 63, 423

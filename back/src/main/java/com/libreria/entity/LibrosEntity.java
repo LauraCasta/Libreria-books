@@ -31,6 +31,11 @@ public class LibrosEntity {
     private String idioma;
     @Column(name = "IMAGEN", nullable = false)
     private String imagen;
+    @Column(name = "VALOR_UNIDAD", nullable = false)
+    private int valorUnidad;
+    
+
+
     public int getIdLibro() {
         return idLibro;
     }
@@ -96,5 +101,11 @@ public class LibrosEntity {
     }
     public void setImagen(String imagen) {
         this.imagen = imagen;
+    }
+    public int getValorUnidad() {
+        return valorUnidad;
+    }
+    public void setValorUnidad(int valorUnidad) {
+        this.valorUnidad = valorUnidad;
     }
 }

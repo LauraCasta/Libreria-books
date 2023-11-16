@@ -23,6 +23,11 @@ public class FacturaEntity {
     private MedioPagoEntity idMedioPago;
     @Column(name = "DIRECCION_ENTREGA", nullable = false)
     private String direccion;
+    @JoinColumn(name = "ID_USUARIO", nullable = false, referencedColumnName="ID_USUARIO")
+    @ManyToOne
+    private UsuarioEntity idUsuario;
+    
+    
     public int getIdFactura() {
         return idFactura;
     }
@@ -58,6 +63,12 @@ public class FacturaEntity {
     }
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+    public UsuarioEntity getIdUsuario() {
+        return idUsuario;
+    }
+    public void setIdUsuario(UsuarioEntity idUsuario) {
+        this.idUsuario = idUsuario;
     }
     
     
